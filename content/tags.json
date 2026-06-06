@@ -174,5 +174,63 @@
         "aka": [
             "discovery"
         ]
+    },
+    {
+        "slug": "azure-app-service",
+        "name": "Azure App Service",
+        "aka": [
+            "app-service"
+        ]
+    },
+    {
+        "slug": "azure-api-management",
+        "name": "Azure API Management",
+        "aka": [
+            "apim"
+        ]
+    },
+    {
+        "slug": "azure-logic-apps",
+        "name": "Azure Logic Apps",
+        "aka": [
+            "logic-apps"
+        ]
+    },
+    {
+        "slug": "azure-managed-redis",
+        "name": "Azure Managed Redis",
+        "aka": [
+            "redis"
+        ]
+    },
+    {
+        "slug": "microsoft-quantum",
+        "name": "Microsoft Quantum",
+        "aka": [
+            "majorana",
+            "quantum"
+        ]
+    },
+    {
+        "slug": "azure-compute",
+        "name": "Azure Compute",
+        "aka": [
+            "azure-vm",
+            "cobalt"
+        ]
+    },
+    {
+        "slug": "windows-365",
+        "name": "Windows 365",
+        "aka": [
+            "cloud-pc"
+        ]
+    },
+    {
+        "slug": "microsoft-teams",
+        "name": "Microsoft Teams",
+        "aka": [
+            "teams"
+        ]
     }
 ]
