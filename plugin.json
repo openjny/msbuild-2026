@@ -6,5 +6,7 @@
     "name": "openjny"
   },
   "license": "CC-BY-4.0",
-  "skills": "msbuild-2026/"
+  "skills": [
+    "skills/msbuild-2026/"
+  ]
 }

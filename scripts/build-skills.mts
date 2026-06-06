@@ -1,7 +1,7 @@
 /**
  * build-skills.mts
  * Transforms content/ → skills/msbuild-2026/ (SKILL.md hub + references)
- * Also generates skills/plugin.json
+ * Also generates plugin.json at the repo root
  */
 
 import path from 'node:path';
@@ -16,6 +16,7 @@ import { DEFAULT_DELIVERIES } from './lib/types.mjs';
 import type { ContentEntry, TopicDef } from './lib/types.mjs';
 
 const SKILLS_DIR = path.resolve(import.meta.dirname, '../skills');
+const ROOT_DIR = path.resolve(import.meta.dirname, '..');
 
 function shouldBuildSkills(entry: ContentEntry): boolean {
   const d = entry.frontmatter.deliveries ?? DEFAULT_DELIVERIES;
@@ -103,7 +104,7 @@ function buildPluginJson(): string {
     version: '0.1.0',
     author: { name: 'openjny' },
     license: 'CC-BY-4.0',
-    skills: 'msbuild-2026/',
+    skills: ['skills/msbuild-2026/'],
   };
   return JSON.stringify(plugin, null, 2) + '\n';
 }
@@ -138,7 +139,7 @@ for (const entry of entries) {
   writeFile(outPath, buildReference(entry));
 }
 
-// plugin.json
-writeFile(path.join(SKILLS_DIR, 'plugin.json'), buildPluginJson());
+// plugin.json (at repo root for /plugin install compatibility)
+writeFile(path.join(ROOT_DIR, 'plugin.json'), buildPluginJson());
 
 console.log('[build-skills] Done');
