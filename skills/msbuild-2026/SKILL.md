@@ -16,8 +16,8 @@ Microsoft Build 2026 (2026/06/02-03, Fort Mason Center) の発表情報を集約
 
 ## Developer tools & frameworks
 
-- [GitHub Copilot App](references/announcements/github-copilot-app.md): エディタに依存しないエージェントネイティブのデスクトップアプリ GitHub Copilot App を Preview で発表。My Work ビューでリポジトリ横断のセッション・Issue・PR・バックグラウンド自動化を一元管理し、エージェントの作業過程と判断根拠を透明化する Trace 機能を搭載。Agent Mode の進化として、開発者のワークフロー全体をカバーする新しいサーフェスを提供する。
-- [GitHub Copilot SDK](references/announcements/github-copilot-sdk.md): GitHub Copilot のエージェントランタイムをプログラマブルなレイヤーとして公開する Copilot SDK が Public Preview。Python・JavaScript・Go・C#・Java の 5 言語で利用可能。ツール呼び出し、ストリーミング、ファイル操作、マルチターンセッションを備え、独自アプリケーションにエージェント機能を組み込める。Copilot クラウドエージェントや Copilot CLI と同じランタイム基盤を使用する。
+- [GitHub Copilot App](references/announcements/github-copilot-app.md): エディタに依存しないエージェントネイティブのデスクトップアプリ GitHub Copilot App を Technical Preview で発表。GitHub Copilot CLI 上に構築され、Issue・PR・セッションを起点に並列ワークストリームでエージェント駆動開発を行う。音声入力、クラウドセッション、エージェンティックブラウジング、Canvas モデルによるユーザー・エージェント・アプリの三者協調を特徴とする。
+- [GitHub Copilot SDK](references/announcements/github-copilot-sdk.md): GitHub Copilot のエージェントランタイムをプログラマブルなレイヤーとして公開する Copilot SDK が Node.js/TypeScript・Python・Go・.NET・Rust・Java の 6 言語で GA。ツール呼び出し、ストリーミング、ファイル操作、マルチターンセッションを備え、独自アプリケーションにエージェント機能を組み込める。Copilot クラウドエージェントや Copilot CLI と同じランタイム基盤を使用する。
 
 ## Cloud platform & data
 

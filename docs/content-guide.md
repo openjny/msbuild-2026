@@ -1,5 +1,12 @@
 # コンテンツ規約
 
+## ファイル配置
+
+- `content/announcements/{id}.md` — 個別の発表・新機能
+- `content/sessions/{id}.md` — セッション要約
+- `content/resources/{id}.md` — リンク集・ツール紹介
+- `id` はファイル名と一致必須。kebab-case
+
 ## frontmatter 仕様
 
 すべてのコンテンツファイルは `content/` 配下に配置し、YAML frontmatter を持つ。
@@ -112,15 +119,26 @@ deliveries:
 
 何が発表されたか、なぜ重要かを 2-3 段落で説明する。
 
-## 主な変更点
+## 主な発表
 
-- **機能名**: 何ができるようになったか（**GA** / **Public Preview** / **Private Preview** を明記）
+この製品/サービスに関して Build 2026 で発表された事項の一覧。
+各項目は「何がどのステータスで発表されたか」を明示する。
+
+- **機能名**: 一文の説明（**GA** / **Public Preview** / **Private Preview** を明記）
 - **機能名**: ...
 
-## 技術的詳細
+ここに書くのは「発表事項」であり、製品の既存機能や技術的な仕組みの説明ではない。
+既存機能の詳細は「## 詳細」に書く。
 
-開発者が知るべき技術的な詳細。
-アーキテクチャの変更、新しい API、内部動作、対応プロトコルなど。
+## 詳細
+
+製品の仕組み、機能、アーキテクチャなど、発表された内容をより深く理解するための情報。
+セクション内で `###` を使ってサブトピックに分割してよい。
+
+### サブトピック例
+
+アーキテクチャの変更、新しい API、内部動作、対応プロトコル、
+主要な機能の詳細説明、関連製品との統合方法など。
 
 ## 応用シナリオ
 
@@ -134,6 +152,8 @@ deliveries:
 内容がなければセクションごと省略可。
 
 ## 参考リンク
+
+最低 3 件を目標に、以下のカテゴリで整理する。
 
 - [公式ブログ記事](https://devblogs.microsoft.com/...)
 - [ドキュメント](https://learn.microsoft.com/...)
@@ -218,3 +238,81 @@ Q&A で出た質問と回答、オフレコの補足情報など。
 - **含めない**: Build と無関係な通常リリース、Build 前の事前発表で当日追加情報なし
 - **グレーゾーン**: Build 直前に公開されセッションで深掘りされたもの → 含める
 - **スコープ管理**: `news.microsoft.com/build-2026` の掲載リストを正とする
+
+---
+
+## ソースの階層
+
+ソースは 3 階層に分類する。`official_sources` に記載できるのは **一次ソースのみ**。
+
+### 一次ソース（`official_sources` に記載可）
+
+Build 2026 イベントハブ（まずここから）:
+
+- `build.microsoft.com` — 公式イベントサイト・セッションカタログ
+- `news.microsoft.com/build-2026/` — 公式アナウンス集約ページ
+- `news.microsoft.com/build-2026-live-blog/` — 公式ライブブログ
+- `aka.ms/build2026-*` 系短縮リンク（リダイレクト先の正規 URL を引用すること）
+
+製品・プラットフォームブログ:
+
+- `devblogs.microsoft.com` — 開発者ブログ
+- `techcommunity.microsoft.com` — Tech Community
+- `blogs.microsoft.com` — Official Microsoft Blog
+- `github.blog` / `github.blog/changelog` — GitHub 公式ブログ・Changelog
+
+ドキュメント・リリース情報:
+
+- `learn.microsoft.com` — 製品ドキュメント、What's New、リリースノート
+- `azure.microsoft.com/en-us/updates/` — Azure Updates
+- `docs.github.com` — GitHub ドキュメント（`github.com` のサブドメインとして `allowed-domains.json` のバリデーションを通過する。`official_sources` に記載可）
+- `github.com/<microsoft-owned-org>/*/releases` — リリースページ
+
+上記以外でも、Microsoft または Microsoft 傘下の組織が運営するドメインの公式アナウンスは一次ソースとして扱う。全リストは `content/allowed-domains.json` を参照。
+
+### 二次ソース（調査補助のみ。`official_sources` に記載不可）
+
+一次ソースの発見と文脈確認に使う。日本語・英語の両方を確認してバイアスを防ぐ。
+
+- 日本語: Publickey、ITmedia、ASCII.jp、Impress Watch、CodeZine、Gihyo
+- 英語: The Verge、Ars Technica、InfoQ、The Register、ZDNET
+
+二次ソースから得た情報は、一次ソースまで辿って一次ソースの URL を `official_sources` に記載する。
+
+### 三次ソース（調査補助のみ。`official_sources` に記載不可）
+
+開発者の反応やニュアンスの把握に使うが、ファクトの根拠にはしない。
+
+- 日本語: Zenn、Qiita、X
+- 英語: Reddit、X、Hacker News
+
+三次ソースの主張が一次ソースで裏付けられない場合、エントリには含めない。
+
+---
+
+## 品質基準
+
+- **技術的正確性:** 日付、バージョン番号、スピーカー、機能、リージョン、価格を捏造しない
+- **正式名称の正確な使用:** Microsoft の表記・大文字小文字に合わせる（例: `.NET 10`、`Azure AI Foundry`、`GitHub Copilot`）。リネームされた場合は新名称を使い、旧名称を一度だけ注記
+- **正確なステータスラベル:** 一次ソースの記述と一致させる
+- **中立的・事実的な文体:** 意見、ロードマップ推測、競合比較は入れない（一次ソース自体が比較している場合を除く）
+- **再現可能性:** `official_sources` のリンクを辿れば、エントリのすべての主張を検証できること
+
+---
+
+## 引用ポリシー
+
+- `official_sources` には **一次ソースのみ** を記載
+- 本文中では初出時にインラインリンク。同じ URL の繰り返しは避ける
+- 二次ソースが一次ソースにリンクしている場合、**一次ソースの URL** を記載する
+- 引用は控えめに。言い換えてリンクする。直接引用は 25 語以下で、正確な文言が重要な場合のみ
+
+---
+
+## 文体ルール
+
+同じ Markdown が人間のサイトとエージェントのコンテキストウィンドウで読まれるため、すべてのトークンに意味を持たせる。
+
+- **短いセクション + 箇条書き** がデフォルト。並列するファクト（リージョン、SKU、ティア）にはテーブル
+- `summary` は frontmatter 専属。本文で frontmatter の内容を繰り返さない
+- 具体的な名詞とバージョン番号を優先。マーケティング用語（「パワフル」「革新的」「ゲームチェンジング」）は削除
