@@ -11,6 +11,7 @@ import {
   loadContentEntries,
   loadBuildInfo,
   loadTopics,
+  cleanDir,
   writeFile,
 } from './lib/content.mjs';
 import { DEFAULT_DELIVERIES } from './lib/types.mjs';
@@ -20,7 +21,8 @@ const WELL_KNOWN_DIR = path.resolve(
   import.meta.dirname,
   '../public/.well-known',
 );
-const SITE_BASE = '/msbuild-2026';
+const buildInfoData = loadBuildInfo();
+const SITE_BASE = buildInfoData.site_base;
 
 function shouldBuildLlms(entry: ContentEntry): boolean {
   const d = entry.frontmatter.deliveries ?? DEFAULT_DELIVERIES;
@@ -30,8 +32,11 @@ function shouldBuildLlms(entry: ContentEntry): boolean {
 // --- Main ---
 
 const entries = loadContentEntries();
-const buildInfo = loadBuildInfo();
+const buildInfo = buildInfoData;
 const topics = loadTopics();
+
+// Clean generated directory
+cleanDir(WELL_KNOWN_DIR);
 
 // 1. build-info.json (copy from content)
 writeFile(

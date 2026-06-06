@@ -9,13 +9,15 @@ import {
   loadContentEntries,
   loadTopics,
   loadBuildInfo,
+  cleanDir,
   writeFile,
 } from './lib/content.mjs';
 import { DEFAULT_DELIVERIES } from './lib/types.mjs';
 import type { ContentEntry, TopicDef } from './lib/types.mjs';
 
 const PUBLIC_DIR = path.resolve(import.meta.dirname, '../public');
-const SITE_BASE = '/msbuild-2026';
+const buildInfo = loadBuildInfo();
+const SITE_BASE = buildInfo.site_base;
 // TODO: Replace with actual domain when deployed
 const SITE_ORIGIN = 'https://openjny.github.io';
 
@@ -31,7 +33,7 @@ function detailPath(entry: ContentEntry): string {
 
 /** Build the hub llms.txt */
 function buildHub(entries: ContentEntry[], topics: TopicDef[]): string {
-  const info = loadBuildInfo();
+  const info = buildInfo;
   const llmsEntries = entries.filter(shouldBuildLlms);
 
   const lines: string[] = [
@@ -115,6 +117,9 @@ const topics = loadTopics();
 console.log(
   `[build-llms] ${entries.filter(shouldBuildLlms).length} entries for llms`,
 );
+
+// Clean generated directories
+cleanDir(path.join(PUBLIC_DIR, 'llms'));
 
 // Hub
 writeFile(path.join(PUBLIC_DIR, 'llms.txt'), buildHub(entries, topics));

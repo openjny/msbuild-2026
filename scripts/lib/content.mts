@@ -53,8 +53,26 @@ export function loadBuildInfo(): BuildInfo {
   );
 }
 
+export function loadAllowedDomains(): string[] {
+  return JSON.parse(
+    fs.readFileSync(path.join(CONTENT_DIR, 'allowed-domains.json'), 'utf-8'),
+  );
+}
+
 export function ensureDir(dirPath: string): void {
   fs.mkdirSync(dirPath, { recursive: true });
+}
+
+/**
+ * Remove all contents of a directory (but keep the directory itself).
+ * No-op if the directory does not exist.
+ */
+export function cleanDir(dirPath: string): void {
+  if (!fs.existsSync(dirPath)) return;
+  for (const entry of fs.readdirSync(dirPath, { withFileTypes: true })) {
+    const fullPath = path.join(dirPath, entry.name);
+    fs.rmSync(fullPath, { recursive: true, force: true });
+  }
 }
 
 export function writeFile(filePath: string, content: string): void {

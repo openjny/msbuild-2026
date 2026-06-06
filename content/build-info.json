@@ -1,6 +1,7 @@
 {
     "event": "Microsoft Build 2026",
     "year": 2026,
+    "site_base": "/msbuild-2026",
     "dates": {
         "start": "2026-06-02",
         "end": "2026-06-03"

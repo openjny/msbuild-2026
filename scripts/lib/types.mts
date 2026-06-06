@@ -40,6 +40,7 @@ export interface TagDef {
 export interface BuildInfo {
   event: string;
   year: number;
+  site_base: string;
   dates: { start: string; end: string };
   location: string;
   timezone: string;

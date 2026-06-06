@@ -5,7 +5,13 @@
  */
 
 import path from 'node:path';
-import { loadContentEntries, loadTopics, writeFile } from './lib/content.mjs';
+import {
+  loadContentEntries,
+  loadTopics,
+  loadBuildInfo,
+  cleanDir,
+  writeFile,
+} from './lib/content.mjs';
 import { DEFAULT_DELIVERIES } from './lib/types.mjs';
 import type { ContentEntry, TopicDef } from './lib/types.mjs';
 
@@ -19,6 +25,10 @@ function shouldBuildSkills(entry: ContentEntry): boolean {
 /** Build the hub SKILL.md */
 function buildSkillHub(entries: ContentEntry[], topics: TopicDef[]): string {
   const skillEntries = entries.filter(shouldBuildSkills);
+  const info = loadBuildInfo();
+  const startDate = info.dates.start.replace(/-/g, '/');
+  const endDate = info.dates.end.split('-')[2];
+  const eventDesc = `${info.event} (${startDate}-${endDate}, ${info.location.split(',')[0]})`;
 
   const lines: string[] = [
     '---',
@@ -28,7 +38,7 @@ function buildSkillHub(entries: ContentEntry[], topics: TopicDef[]): string {
     '',
     '# Microsoft Build 2026 Info Hub',
     '',
-    'Microsoft Build 2026 (2026年6月2-3日, San Francisco) の発表情報を集約したスキル。',
+    `${eventDesc} の発表情報を集約したスキル。`,
     'アナウンス、セッション要約、リソースリンクを提供する。',
     '',
     '各アナウンスの詳細は references/ 配下を参照。',
@@ -56,16 +66,19 @@ function buildSkillHub(entries: ContentEntry[], topics: TopicDef[]): string {
   return lines.join('\n');
 }
 
-/** Build a reference file for a single entry */
+/** Build a reference file for a single entry (strips ## 参考リンク to avoid duplication with ## 公式ソース) */
 function buildReference(entry: ContentEntry): string {
   const fm = entry.frontmatter;
 
   const lines: string[] = [`# ${fm.title}`, '', fm.summary, ''];
 
-  // Include body as-is (skills references can be detailed)
+  // Strip ## 参考リンク section from body to avoid duplication with 公式ソース
   if (entry.body) {
-    lines.push(entry.body);
-    lines.push('');
+    const body = entry.body.replace(/## 参考リンク[\s\S]*$/, '').trim();
+    if (body) {
+      lines.push(body);
+      lines.push('');
+    }
   }
 
   // Official sources
@@ -103,6 +116,9 @@ const topics = loadTopics();
 console.log(
   `[build-skills] ${entries.filter(shouldBuildSkills).length} entries for skills`,
 );
+
+// Clean generated references directory
+cleanDir(path.join(SKILLS_DIR, 'msbuild-2026', 'references'));
 
 // SKILL.md hub
 writeFile(

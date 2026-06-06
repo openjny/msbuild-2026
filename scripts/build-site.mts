@@ -15,10 +15,12 @@ import {
   loadContentEntries,
   loadTopics,
   loadTags,
-  loadBuildInfo,
+  loadAllowedDomains,
+  cleanDir,
   writeFile,
 } from './lib/content.mjs';
 import { DEFAULT_DELIVERIES } from './lib/types.mjs';
+import { validateAllEntries } from './lib/validate.mjs';
 import type { ContentEntry, TopicDef, TagDef } from './lib/types.mjs';
 
 const SITE_DIR = path.resolve(import.meta.dirname, '../site');
@@ -198,8 +200,23 @@ function buildNavJson(entries: ContentEntry[], topics: TopicDef[]) {
 const entries = loadContentEntries();
 const topics = loadTopics();
 const tags = loadTags();
+const allowedDomains = loadAllowedDomains();
+
+// Validate all entries before building
+validateAllEntries(entries, tags, topics, allowedDomains);
 
 console.log(`[build-site] ${entries.length} content entries loaded`);
+
+// Clean generated directories
+for (const subdir of [
+  'announcements',
+  'sessions',
+  'resources',
+  'topics',
+  'tags',
+]) {
+  cleanDir(path.join(SITE_DIR, subdir));
+}
 
 // 1. Individual pages
 for (const entry of entries) {
