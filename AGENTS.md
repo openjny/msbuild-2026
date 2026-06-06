@@ -31,7 +31,7 @@ Microsoft Build 2026 の発表情報を集約したナレッジベース。
 
 - 全項目必須（`deliveries` のみ省略可、省略時は全 `true`）
 - `title` は ID 名の人間用表示名。説明的修飾語は不要
-- `summary` は 200-300 文字程度。何が変わったかを直接記述。「Build 2026」「アップデート」等の文脈冗長は排除
+- `summary` は 200-300 文字程度の 1 行文字列。何が変わったかを直接記述。YAML の `>-` は使わない（折り返し時に不要な空白が混入するため）。「Build 2026」「アップデート」等の文脈冗長は排除
 - `tags` は `content/tags.json` で定義されたスラッグのみ使用
 - `topic` は `content/topics.json` で定義されたスラッグのみ使用
 - `official_sources` は `content/allowed-domains.json` で許可されたドメインのみ

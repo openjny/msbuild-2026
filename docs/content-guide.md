@@ -6,18 +6,16 @@
 
 ```yaml
 ---
-id: github-copilot-agent-mode
-title: GitHub Copilot Agent Mode
-summary: >-
-  Copilot が自律的にタスクを計画・実行する Agent Mode の進化と、
-  エディタ非依存のデスクトップアプリ GitHub Copilot App の発表。
+id: github-copilot-app
+title: GitHub Copilot App
+summary: エディタに依存しないエージェントネイティブのデスクトップアプリ GitHub Copilot App を Preview で発表。My Work ビューでリポジトリ横断のセッション・Issue・PR・バックグラウンド自動化を一元管理し、エージェントの作業過程と判断根拠を透明化する Trace 機能を搭載。Agent Mode の進化として、開発者のワークフロー全体をカバーする新しいサーフェスを提供する。
 tags:
   - github-copilot
+  - github-copilot-app
 content_type: announcement
-topic: agents-and-apps
+topic: developer-tools-and-frameworks
 official_sources:
   - https://github.blog/...
-  - https://code.visualstudio.com/...
 deliveries:
   site: true
   llms: true
@@ -31,7 +29,7 @@ deliveries:
 |-----------|------|------|
 | `id` | Yes | 一意 ID。ファイル名と一致必須。kebab-case。URL・llms パス・references ファイル名に使われる |
 | `title` | Yes | ID の人間用表示名。製品名やサービス名を書く。説明的な修飾語は不要 |
-| `summary` | Yes | 300 文字程度の概要。何が変わったか・何ができるようになったかを直接記述 |
+| `summary` | Yes | 200-300 文字程度の 1 行文字列。何が変わったか・何ができるようになったかを直接記述。YAML の `>-` は使わない |
 | `tags` | Yes | `tags.json` で定義されたスラッグのリスト。未定義スラッグは CI でエラー |
 | `content_type` | Yes | `announcement` / `session` / `resource` |
 | `topic` | Yes | `topics.json` で定義されたスラッグ |
@@ -43,7 +41,7 @@ deliveries:
 - ID の人間用表示名。製品名やサービス名をそのまま書く
 - 「〜アップデート」「〜エンタープライズ対応」のような説明的修飾語は **不要**
 - リポジトリ全体が Build 2026 なので「Build 2026」も **不要**
-- 良い例: `GitHub Copilot Agent Mode`, `Microsoft Foundry`, `Azure SRE Agent`
+- 良い例: `GitHub Copilot App`, `Microsoft Foundry`, `Azure SRE Agent`
 - 悪い例: `Microsoft Foundry アップデート`, `Azure SRE Agent — VNet 統合で本番環境に展開可能に`
 
 ### summary の書き方
@@ -52,7 +50,7 @@ deliveries:
 - hub 一覧（llms.txt、SKILL.md）で title と並んで表示される前提
 - 製品名は title で表示されるため summary での繰り返しは **不要**
 - 「Build 2026」のようなリポジトリ文脈の繰り返しは **不要**
-- 200-300 文字程度
+- 200-300 文字程度の 1 行文字列。YAML の `>-`（folded block scalar）は使わない（改行がスペースに変換され、句読点後に不要な空白が入るため）
 
 ### topic スラッグ一覧
 
