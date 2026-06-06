@@ -1,13 +1,13 @@
 ---
 id: windows-dev
 title: Windows Development
-summary: Windows の Build 2026 更新として、Windows プラットフォームセキュリティ（エージェント向け）、ローカル AI 機能、Surface RTX Spark Dev Box（NVIDIA RTX Spark 搭載、1 PFLOPS AI 計算能力）、Intelligent Terminal v0.1 を発表。開発者とエージェントのための信頼されたプラットフォームとしての Windows を強化。
+summary: Windows 開発者向けプラットフォーム全体の Build 2026 更新として、Windows Development Configurations（GA）、Coreutils for Windows（GA）、WSL containers、Intelligent Terminal v0.1、Windows AI APIs の拡張（Aion 1.0 SLM）、Windows プラットフォームセキュリティ for AI エージェントを発表。個別の発表は専用エントリに分離。
 tags:
   - windows-dev
 content_type: announcement
 topic: windows
 official_sources:
-  - https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work
+  - https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development
 deliveries:
   site: true
   llms: true
@@ -16,39 +16,23 @@ deliveries:
 
 ## 概要
 
-Windows は Build 2026 で「開発者とエージェントのための信頼されたプラットフォーム」としての位置づけを強化した。AI エージェントのセキュリティ基盤、ローカル AI 機能、開発者向けハードウェアが発表の柱である。
+Windows は Build 2026 で「開発者とエージェントのための信頼されたプラットフォーム」としての位置づけを強化した。開発環境セットアップの自動化、Linux 互換ツール群、ターミナル刷新、ローカル AI API の拡張が発表の柱である。個別の大型発表は専用エントリに分離した。
 
 ## 主な発表
 
+- **[Windows Development Configurations](windows-dev-config.md)**: WinGet 設定ファイルで新規マシンを数分で開発環境に（**GA**）
+- **[Coreutils for Windows](coreutils-for-windows.md)**: Linux ライクな CLI ユーティリティの Windows ネイティブ提供（**GA**）
+- **[WSL containers](wsl-containers.md)**: Linux コンテナを Windows でネイティブ実行する `wslc.exe` CLI と API（**近日 Preview**）
+- **[Intelligent Terminal](intelligent-terminal.md)**: ACP 対応の AI ネイティブターミナル（**Experimental Preview**）
+- **[Windows AI APIs](windows-ai-apis.md)**: Aion 1.0 SLM / Speech Recognition API（**Preview**）
+- **[Surface RTX Spark Dev Box](surface-rtx-spark-dev-box.md)**: NVIDIA RTX Spark 搭載の開発者向けデバイス
 - **Windows プラットフォームセキュリティ for AI エージェント**: エージェント実行の信頼基盤
-- **ローカル AI**: Windows PC 上での無制限インテリジェンス
-- **Surface RTX Spark Dev Box**: NVIDIA RTX Spark 搭載の開発者向けデバイス
-- **Intelligent Terminal v0.1**: AI ネイティブのターミナルアプリ
 
-## 詳細
+## 関連エントリ
 
-### Surface RTX Spark Dev Box
-
-- NVIDIA RTX Spark 搭載で最大1ペタフロップスの AI 計算能力
-- 128 GB 統合メモリ
-- 最大1200億パラメータの LLM をローカルで実行可能
-- 最大100万トークンのコンテキストでエージェントをローカル実行
-- WSL 2 + ネイティブ GPU パススルー + フル CUDA サポート（プリコンフィグ）
-- VS Code、GitHub Copilot プリインストール
-- 米国で今年後半に Microsoft.com で販売予定
-
-### Intelligent Terminal
-
-AI コーディングエージェントとの連携に最適化されたターミナルアプリ。v0.1 が発表。
-
-## 応用シナリオ
-
-- Surface RTX Spark Dev Box でのローカル LLM 実行による低レイテンシ開発
-- Windows 上でのエージェントファーストの開発ワークフロー
-- Intelligent Terminal でのエージェント駆動コーディング
+- [Windows 365](windows-365.md)
 
 ## 参考リンク
 
-- [Build 2026: Furthering Windows as the trusted platform for development](https://news.microsoft.com/presskits/windows)
+- [Build 2026: Furthering Windows as the trusted platform for development](https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development)
 - [Windows platform security for AI agents](https://news.microsoft.com/presskits/windows)
-- [Announcing Intelligent Terminal 0.1](https://devblogs.microsoft.com/commandline/announcing-intelligent-terminal-version-0-1)

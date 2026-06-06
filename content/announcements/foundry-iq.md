@@ -37,6 +37,8 @@ Foundry IQ は Microsoft IQ の一部として、他の IQ レイヤーと統合
 - **Foundry IQ**: ナレッジ検索とグラウンディング
 - **Web IQ**: ウェブからのリアルタイムグラウンディング
 
+Microsoft IQ ファミリー全体については [Microsoft IQ エントリ](microsoft-iq.md) を参照。
+
 ## 応用シナリオ
 
 - エンタープライズドキュメントとウェブ情報を統合したリサーチエージェント

@@ -1,0 +1,46 @@
+name: Sync generated skills
+
+on:
+    push:
+        branches: [main]
+        paths:
+            - "content/**"
+            - "scripts/**"
+            - "plugin.json"
+    workflow_dispatch:
+
+permissions:
+    contents: write
+
+jobs:
+    sync-skills:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+            - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+              with:
+                  node-version: 24
+                  cache: npm
+
+            - run: npm ci
+
+            - run: npm run build:content
+
+            - name: Check for changes
+              id: diff
+              run: |
+                  git add skills/ plugin.json
+                  if git diff --cached --quiet; then
+                    echo "changed=false" >> "$GITHUB_OUTPUT"
+                  else
+                    echo "changed=true" >> "$GITHUB_OUTPUT"
+                  fi
+
+            - name: Commit and push
+              if: steps.diff.outputs.changed == 'true'
+              run: |
+                  git config user.name "github-actions[bot]"
+                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                  git commit -m "chore: sync generated skills from content changes"
+                  git push

@@ -232,5 +232,58 @@
         "aka": [
             "teams"
         ]
+    },
+    {
+        "slug": "microsoft-iq",
+        "name": "Microsoft IQ",
+        "aka": [
+            "work-iq",
+            "web-iq",
+            "fabric-iq"
+        ]
+    },
+    {
+        "slug": "surface",
+        "name": "Surface",
+        "aka": [
+            "surface-rtx-spark"
+        ]
+    },
+    {
+        "slug": "wsl",
+        "name": "Windows Subsystem for Linux",
+        "aka": [
+            "wslc",
+            "wsl-containers",
+            "wsl-io"
+        ]
+    },
+    {
+        "slug": "intelligent-terminal",
+        "name": "Intelligent Terminal",
+        "aka": []
+    },
+    {
+        "slug": "windows-ai",
+        "name": "Windows AI",
+        "aka": [
+            "aion",
+            "windows-ai-apis"
+        ]
+    },
+    {
+        "slug": "azure-databricks",
+        "name": "Azure Databricks",
+        "aka": [
+            "databricks",
+            "genie-spaces"
+        ]
+    },
+    {
+        "slug": "copilot-studio",
+        "name": "Microsoft Copilot Studio",
+        "aka": [
+            "agent-builder"
+        ]
     }
 ]
