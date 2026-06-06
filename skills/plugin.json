@@ -1,10 +1,10 @@
 {
-    "name": "msbuild-2026",
-    "description": "Microsoft Build 2026 の発表情報・セッション・リソースを提供するスキルプラグイン",
-    "version": "0.1.0",
-    "author": {
-        "name": "openjny"
-    },
-    "license": "CC-BY-4.0",
-    "skills": "msbuild-2026/"
+  "name": "msbuild-2026",
+  "description": "Microsoft Build 2026 の発表情報・セッション・リソースを提供するスキルプラグイン",
+  "version": "0.1.0",
+  "author": {
+    "name": "openjny"
+  },
+  "license": "CC-BY-4.0",
+  "skills": "msbuild-2026/"
 }
