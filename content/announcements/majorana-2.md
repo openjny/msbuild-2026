@@ -1,12 +1,14 @@
 ---
 id: majorana-2
 title: Majorana 2
-summary: 次世代量子コンピューティングチップ Majorana 2 を発表。トポロジカル超伝導体を基盤とし、前世代比で信頼性1000倍、平均 qubit 寿命20秒（最大1分）を達成。手のひらに収まるチップ上で100万 qubit への道筋を示し、エージェンティック AI の支援によ2029年までにスケーラブルな量子マシンの実現を目指す。
+summary: 次世代トポロジカル量子チップ Majorana 2 を発表。鉛ベースの新材料スタックにより前世代比で qubit 信頼性1000倍（パリティ寿命 平均20秒、最大1分超）を達成し、マイクロ秒スケールの演算速度と 1/100mm の qubit サイズで100万 qubit スケールへの道筋を示した。Microsoft Discovery のエージェンティック AI が材料設計を加速し、スケーラブル量子コンピュータの実現目標を2029年に前倒し。
 tags:
   - microsoft-quantum
+  - microsoft-discovery
 content_type: announcement
 topic: working-with-models
 official_sources:
+  - https://news.microsoft.com/source/features/innovation/majorana-2-microsoft-discovery-agentic-ai
   - https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work
 deliveries:
   site: true
@@ -16,27 +18,91 @@ deliveries:
 
 ## 概要
 
-Majorana 2 は Microsoft Quantum の次世代量子コンピューティングチップである。前世代の Majorana 1（理論上のみ存在していた新しい物質状態に基づく）の成果を基盤に、大幅なスケールアップを実現した。
+Majorana 2 は Microsoft Quantum が Build 2026（2026年6月2日）で発表した次世代トポロジカル量子チップである。2025年2月に発表された初代 Majorana 1 の材料スタックを刷新し、超伝導体をアルミニウムから鉛（Pb）に置換することで、トポロジカルギャップを2倍以上に拡大。qubit のパリティ寿命を1000倍以上（1–12ミリ秒 → 平均20秒、最大1分超）に改善した。
 
-キーノートで Satya Nadella が発表し、2029年までにエージェンティック AI の支援によりスケーラブルな量子マシンを実現するロードマップを示した。
+この急速な進歩により、Microsoft はスケーラブルな実用量子コンピュータの実現目標を当初のタイムラインから半分に短縮し、2029年を目標年としている。材料スタックの設計には Microsoft Discovery のエージェンティック AI が活用され、AI が科学的発見を加速する実例としても位置付けられた。
+
+Chetan Nayak（Technical Fellow、Corporate Vice President of Quantum Hardware）は「昨年と比較して1000倍良くなっている。毎年改善を重ね、大きな商業的・社会的価値を持つコンピュータの実現に近づいていく」と述べた。
 
 ## 主な発表
 
-- **Majorana 2 チップ**: 次世代量子コンピューティングチップ
-- **信頼性1000倍向上**: 前世代比
-- **平均 qubit 寿命20秒**: 最大1分のインスタンスも確認
-- **100万 qubit へのパス**: 手のひらサイズのチップ上での実現を目指す
-- **2029年目標**: エージェンティック AI 支援によるスケーラブル量子マシン
+- **Majorana 2 チップ**: 鉛ベースの新材料スタックを採用した次世代トポロジカル量子プロセッサ
+- **信頼性1000倍向上**: パリティ寿命が前世代（1–12ミリ秒）から平均20秒へ。一部インスタンスは1分超を記録
+- **トポロジカルギャップ2倍超**: 環境ノイズとエラーからの qubit 保護が大幅に強化
+- **マイクロ秒スケール演算**: パリティ寿命に対して7桁以上長い演算時間比。1回のパリティ寿命内で数百万回の演算が可能
+- **Microsoft Discovery による材料設計**: エージェンティック AI が新材料スタックの探索・最適化を加速
+- **2029年ロードマップ**: スケーラブル量子コンピュータの実現目標を当初から半分に前倒し
 
 ## 詳細
 
-Majorana 1 は理論上のみ存在していた新しい物質状態（トポロジカル超伝導体）に依存していた。Majorana 2 はこの基礎研究の成果をスケールに向けて前進させた。
+### 材料スタックの刷新
 
-量子コンピューティングとエージェンティック AI の融合が長期ビジョンとして示されている。
+Majorana 2 の核心的改善は材料スタックの全面的な見直しにある。主な変更点:
+
+- **超伝導体**: アルミニウム → 鉛（Pb）に置換。鉛の超伝導ギャップがアルミニウムより大きく、より安定したトポロジカル相を実現
+- **半導体活性領域**: インジウム砒素（InAs）とインジウム砒素アンチモン（InAsSb）の複合量子井戸に更新
+- **基板**: ガリウムアンチモン（GaSb）基板上にバリア層とバッファ層を配置
+- **トポロジカルギャップ**: 前世代の2倍以上に拡大。qubit を環境ノイズとエラーから保護する「保護壁」として機能
+
+この材料変更の結果、トポロジカル相のロバスト性が大幅に向上し、qubit パリティ寿命が3桁以上改善された。テトロンデバイス構造における Z パリティ測定で22秒の特性寿命を記録している。
+
+### 性能指標と Majorana 1 からの進化
+
+| 指標 | Majorana 1（2025年2月） | Majorana 2（2026年6月） | 改善比 |
+|------|------------------------|------------------------|--------|
+| 超伝導体 | アルミニウム | 鉛（Pb） | — |
+| パリティ寿命 | 1–12 ミリ秒 | 平均20秒（最大1分超） | 1000倍以上 |
+| トポロジカルギャップ | 基準値 | 2倍以上 | 2倍超 |
+| 演算速度 | — | マイクロ秒スケール（~1 µs） | — |
+| qubit サイズ | — | 1/100 mm | — |
+| 演算/寿命比 | — | 10⁷（7桁） | — |
+
+パリティ切り替え時間が演算時間の7桁以上長いということは、1回のパリティ寿命内で数百万回のゲート操作が可能であることを意味する。これは耐障害性量子計算に必要な閾値を大きく上回る指標である。
+
+### エージェンティック AI による科学的加速
+
+Majorana 2 の材料スタック設計には、同日 GA となった Microsoft Discovery のエージェンティック AI プラットフォームが活用された。従来の実験科学では、材料候補の探索・実験・測定・データ分析のサイクルに数か月を要するが、AI エージェントチームが以下を加速した:
+
+- 材料候補の探索と絞り込み
+- 実験パラメータの最適化提案
+- 測定データの分析とパターン認識
+- 研究者間のコラボレーション支援
+
+この AI 支援アプローチにより、Majorana 1 発表から約16か月で1000倍の性能改善を達成。Microsoft は「AI が本格的な科学を加速している明確な兆候」と位置付けている。
+
+### 100万 qubit へのロードマップ
+
+Microsoft のトポロジカル qubit アプローチは、スケーラビリティを根本的な設計原則としている:
+
+- **小型 qubit サイズ**（1/100 mm）により、手のひらサイズのチップ上に100万 qubit を集積可能なパスを確保
+- **トポロジカル保護**により、物理的なエラー率を抑制し、エラー訂正のオーバーヘッドを削減
+- **2029年目標**: スケーラブルで商業的に価値のある量子コンピュータの実現。当初タイムラインから半分に短縮
+- 最終目標は変革的な耐障害性量子コンピュータの構築であり、人類全体に影響を与える問題を解決する能力を持つ
+
+## 応用シナリオ
+
+- **創薬・材料科学**: 分子シミュレーションにより新薬候補や新素材の探索を古典コンピュータでは不可能な精度で実行。量子化学計算で化学反応のメカニズムを解明
+- **エネルギー・サステナビリティ**: 触媒設計の最適化、バッテリー材料の探索、炭素回収プロセスのシミュレーションなど、エネルギー生産と持続可能性に関する計算困難な問題に対応
+- **食料供給・農業**: 肥料生成プロセス（ハーバー・ボッシュ法）の最適化や、作物の耐性向上に関する分子レベルのシミュレーション
+- **最適化問題**: サプライチェーン最適化、金融ポートフォリオ最適化、交通ルーティングなど、組合せ爆発する問題に対する量子アドバンテージの実現
+- **暗号・セキュリティ**: 大規模量子コンピュータによる既存暗号の脆弱性評価と、ポスト量子暗号への移行計画策定の基盤
+
+## 制約・注意点
+
+- 技術論文（"20 Second Parity Lifetime in an InAs-Pb Device"、arXiv:2606.03884）はプレプリントであり、査読を経ていない（2026年6月時点）
+- 論文で報告されているのは Z パリティ測定のみ。X パリティ測定データは未公開であり、完全な qubit 動作の実証には両方が必要
+- パリティ寿命の測定は受動的モニタリングによるもの。実際のゲート操作中にも同等の寿命が維持されるかは追加検証が必要
+- 一部の物理学者からはトポロジカル qubit の存在自体に対する懐疑論が継続している。DARPA の量子ベンチマーキングイニシアティブによる評価を受けたと Microsoft は説明
+- 商用量子コンピュータの2029年実現は目標であり、技術的・工学的課題が残存
 
 ## 参考リンク
 
+- [Majorana 2, made more reliable with Microsoft Discovery agentic AI](https://news.microsoft.com/source/features/innovation/majorana-2-microsoft-discovery-agentic-ai)
 - [Microsoft Build 2026: Be yourself at work](https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work)
-- [Microsoft unveils Majorana 1（前世代の背景）](https://azure.microsoft.com/en-us/blog/quantum/2025/02/19/microsoft-unveils-majorana-1-the-worlds-first-quantum-processor-powered-by-topological-qubits)
-- [Azure Quantum Computing](https://azure.microsoft.com/en-us/solutions/quantum-computing)
-- [Microsoft Build Live](https://news.microsoft.com/build-2026-live-blog/microsoft-build-2026-live)
+- [Microsoft's Majorana 1 chip carves new path for quantum computing](https://news.microsoft.com/source/features/innovation/microsofts-majorana-1-chip-carves-new-path-for-quantum-computing)
+- [Azure Quantum ドキュメント](https://learn.microsoft.com/azure/quantum/)
+- [Azure Quantum Computing ソリューション](https://azure.microsoft.com/en-us/solutions/quantum-computing)
+
+## 関連エントリ
+
+- [Microsoft Discovery](../announcements/microsoft-discovery.md) — Majorana 2 の材料設計を加速したエージェンティック AI プラットフォーム

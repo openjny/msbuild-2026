@@ -48,5 +48,6 @@ Microsoft IQ ファミリー全体については [Microsoft IQ エントリ](mi
 ## 参考リンク
 
 - [Foundry IQ: Build smarter agents faster with unified knowledge and serverless retrieval](https://devblogs.microsoft.com/foundry/foundry-iq-build-smarter-agents-faster-with-unified-knowledge-and-serverless-retrieval)
+- [Foundry IQ ブログ記事 (DevBlogs)](https://devblogs.microsoft.com/foundry/build-smarter-agents-faster-with-foundry-iq/)
 - [What's new in Microsoft Foundry | Build Edition](https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-build-2026)
 - [Microsoft Foundry ドキュメント](https://learn.microsoft.com/azure/ai-foundry/)
