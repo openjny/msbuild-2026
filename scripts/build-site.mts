@@ -79,25 +79,43 @@ function buildTopicPage(topic: TopicDef, entries: ContentEntry[]): string {
   const matching = entries.filter(
     (e) => e.frontmatter.topic === topic.slug && shouldBuildSite(e),
   );
+  const announcements = matching.filter((e) => e.frontmatter.content_type === 'announcement');
+  const sessions = sortSessions(matching.filter((e) => e.frontmatter.content_type === 'session'));
 
   const lines = [
     '---',
     `title: "${topic.name}"`,
-    `description: "Microsoft Build 2026 — ${topic.name} 関連のアナウンス一覧"`,
+    `description: "Microsoft Build 2026 — ${topic.name} 関連のコンテンツ一覧"`,
     '---',
     '',
     `# ${topic.name}`,
     '',
-    `Microsoft Build 2026 の ${topic.name} に関連するアナウンス。`,
+    `Microsoft Build 2026 の ${topic.name} に関連するコンテンツ。`,
     '',
   ];
 
   if (matching.length === 0) {
-    lines.push('*まだアナウンスが登録されていません。*');
-  } else {
-    for (const e of matching) {
+    lines.push('*まだコンテンツが登録されていません。*');
+  }
+
+  if (announcements.length > 0) {
+    lines.push('## 📢 アナウンス');
+    lines.push('');
+    for (const e of announcements) {
       const link = `/${e.relativePath.replace(/\.md$/, '')}`;
-      lines.push(`## [${displayTitle(e)}](${link})`);
+      lines.push(`### [${e.frontmatter.title}](${link})`);
+      lines.push('');
+      lines.push(e.frontmatter.summary);
+      lines.push('');
+    }
+  }
+
+  if (sessions.length > 0) {
+    lines.push('## 🎤 セッション');
+    lines.push('');
+    for (const e of sessions) {
+      const link = `/${e.relativePath.replace(/\.md$/, '')}`;
+      lines.push(`### [${displayTitle(e)}](${link})`);
       lines.push('');
       lines.push(e.frontmatter.summary);
       lines.push('');
@@ -125,10 +143,29 @@ function buildTagPage(tag: TagDef, entries: ContentEntry[]): string {
     '',
   ];
 
+  const announcements = matching.filter((e) => e.frontmatter.content_type === 'announcement');
+  const sessions = sortSessions(matching.filter((e) => e.frontmatter.content_type === 'session'));
+
   if (matching.length === 0) {
     lines.push('*まだコンテンツが登録されていません。*');
-  } else {
-    for (const e of matching) {
+  }
+
+  if (announcements.length > 0) {
+    lines.push('## 📢 アナウンス');
+    lines.push('');
+    for (const e of announcements) {
+      const link = `/${e.relativePath.replace(/\.md$/, '')}`;
+      lines.push(
+        `- [${e.frontmatter.title}](${link}) — ${e.frontmatter.summary.split('\n')[0]}`,
+      );
+    }
+    lines.push('');
+  }
+
+  if (sessions.length > 0) {
+    lines.push('## 🎤 セッション');
+    lines.push('');
+    for (const e of sessions) {
       const link = `/${e.relativePath.replace(/\.md$/, '')}`;
       lines.push(
         `- [${displayTitle(e)}](${link}) — ${e.frontmatter.summary.split('\n')[0]}`,
