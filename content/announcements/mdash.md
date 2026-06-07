@@ -11,6 +11,10 @@ topic: developer-tools-and-frameworks
 official_sources:
   - https://www.microsoft.com/en-us/security/blog/2026/06/02/microsoft-build-2026-securing-code-agents-and-models-across-the-development-lifecycle
   - https://www.microsoft.com/en-us/security/blog/2026/05/12/defense-at-ai-speed-microsofts-new-multi-model-agentic-security-system-tops-leading-industry-benchmark
+deliveries:
+  site: true
+  llms: true
+  skills: true
 ---
 
 ## 概要

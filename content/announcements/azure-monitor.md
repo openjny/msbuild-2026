@@ -10,6 +10,10 @@ topic: cloud-platform-and-data
 official_sources:
   - https://techcommunity.microsoft.com/blog/azureobservabilityblog/what%E2%80%99s-new-in-observability-at-build-2026/4524927
   - https://techcommunity.microsoft.com/blog/azureobservabilityblog/new-capabilities-to-observe-agents-in-azure-monitor/4524896
+deliveries:
+  site: true
+  llms: true
+  skills: true
 ---
 
 ## 概要

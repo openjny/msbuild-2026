@@ -9,6 +9,10 @@ content_type: announcement
 topic: cloud-platform-and-data
 official_sources:
   - https://techcommunity.microsoft.com/blog/adforpostgresql/announcing-new-security-maintenance-and-analytics-features-for-postgresql-at-mic/4524559
+deliveries:
+  site: true
+  llms: true
+  skills: true
 ---
 
 ## 概要

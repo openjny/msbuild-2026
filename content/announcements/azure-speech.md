@@ -10,6 +10,10 @@ content_type: announcement
 topic: agents-and-apps
 official_sources:
   - https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/azure-speech-at-build-2026-powering-voice-agents-with-real-time-and-life-like-ex/4524638
+deliveries:
+  site: true
+  llms: true
+  skills: true
 ---
 
 ## 概要

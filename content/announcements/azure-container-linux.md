@@ -10,6 +10,10 @@ content_type: announcement
 topic: cloud-platform-and-data
 official_sources:
   - https://techcommunity.microsoft.com/blog/linuxandopensourceblog/introducing-azure-container-linux-acl/4523411
+deliveries:
+  site: true
+  llms: true
+  skills: true
 ---
 
 ## 概要

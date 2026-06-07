@@ -14,7 +14,7 @@ import {
   loadTopics,
   loadAllowedDomains,
 } from './lib/content.mjs';
-import { validateAllEntries, checkLinksLiveness } from './lib/validate.mjs';
+import { validateAllEntries, checkLinksLiveness, checkCrossLinks } from './lib/validate.mjs';
 
 const checkLinks = process.argv.includes('--check-links');
 
@@ -32,6 +32,16 @@ try {
     }
   }
   console.log(`[validate] ${entries.length} entries — frontmatter OK`);
+
+  // Cross-link validation (always runs, fast)
+  const crossLinkErrors = checkCrossLinks(entries);
+  if (crossLinkErrors.length > 0) {
+    console.error(`[validate] ${crossLinkErrors.length} dead cross-link(s):`);
+    for (const e of crossLinkErrors) {
+      console.error(`  ✗ ${e}`);
+    }
+    process.exit(1);
+  }
 
   if (checkLinks) {
     console.log('[validate] Checking reference link liveness...');

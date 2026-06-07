@@ -11,6 +11,10 @@ topic: cloud-platform-and-data
 official_sources:
   - https://techcommunity.microsoft.com/blog/linuxandopensourceblog/announcing-azure-linux-4-0-purpose-built-for-azure-now-in-public-preview/4524267
   - https://opensource.microsoft.com/blog/2026/05/18/from-open-source-to-agentic-systems-microsoft-at-open-source-summit-north-america-2026
+deliveries:
+  site: true
+  llms: true
+  skills: true
 ---
 
 ## 概要

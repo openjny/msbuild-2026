@@ -12,6 +12,10 @@ official_sources:
   - https://techcommunity.microsoft.com/blog/agent-365-blog/what%E2%80%99s-new-in-agent-365-may-2026/4516340
   - https://techcommunity.microsoft.com/blog/microsoft-security-blog/securing-ai-agents-end%E2%80%91to%E2%80%91end-connecting-purview-dspm-agent-365-and-the-ai-secur/4521155
   - https://techcommunity.microsoft.com/blog/coreinfrastructureandsecurityblog/conditional-access-for-agent-identities-in-microsoft-entra/4489915
+deliveries:
+  site: true
+  llms: true
+  skills: true
 ---
 
 ## 概要

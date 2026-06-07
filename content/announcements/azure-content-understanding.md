@@ -8,6 +8,10 @@ content_type: announcement
 topic: agents-and-apps
 official_sources:
   - https://devblogs.microsoft.com/foundry/whats-new-in-azure-content-understanding-at-build-2026/
+deliveries:
+  site: true
+  llms: true
+  skills: true
 ---
 
 ## 概要

@@ -280,6 +280,57 @@ export function validateAllEntries(
 }
 
 // ---------------------------------------------------------------------------
+// Cross-reference link validation
+// Ensures relative markdown links within site-delivered entries only point to
+// other site-delivered entries. Catches dead links before VitePress build.
+// ---------------------------------------------------------------------------
+
+/** Relative .md link pattern: [text](relative/path.md) or [text](../dir/file.md) */
+const RELATIVE_LINK_RE = /\]\((?!https?:\/\/)([^)#]+\.md)(?:#[^)]*)?\)/g;
+
+/**
+ * Check that relative markdown links from site-delivered entries point to
+ * other site-delivered entries. Returns error messages for dead cross-links.
+ */
+export function checkCrossLinks(entries: ContentEntry[]): string[] {
+  // Build set of relativePaths for entries with site: true
+  const siteEntryPaths = new Set(
+    entries
+      .filter((e) => e.frontmatter.deliveries?.site)
+      .map((e) => e.relativePath),
+  );
+
+  const errors: string[] = [];
+
+  for (const entry of entries) {
+    // Only check entries that are delivered to the site
+    if (!entry.frontmatter.deliveries?.site) continue;
+
+    const dir = entry.relativePath.replace(/\/[^/]+$/, '');
+
+    for (const match of entry.body.matchAll(RELATIVE_LINK_RE)) {
+      const rawTarget = match[1];
+      // Resolve relative path against entry's directory
+      const parts = [...dir.split('/'), ...rawTarget.split('/')];
+      const resolved: string[] = [];
+      for (const p of parts) {
+        if (p === '..') resolved.pop();
+        else if (p !== '.') resolved.push(p);
+      }
+      const targetPath = resolved.join('/');
+
+      if (!siteEntryPaths.has(targetPath)) {
+        errors.push(
+          `${entry.relativePath}: dead cross-link to "${rawTarget}" (resolved: ${targetPath}) — target missing or not site-delivered`,
+        );
+      }
+    }
+  }
+
+  return errors;
+}
+
+// ---------------------------------------------------------------------------
 // Reference link liveness check (optional, network-dependent)
 // Results cached in .cache/link-check.json with 24h TTL.
 // ---------------------------------------------------------------------------

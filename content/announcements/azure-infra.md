@@ -9,6 +9,10 @@ topic: cloud-platform-and-data
 official_sources:
   - https://techcommunity.microsoft.com/blog/azurecompute/new-azure-cobalt-200-vms-deliver-50-performance-improvement-fully-optimized-for-modern-agentic-ai-workloads/4524500
   - https://techcommunity.microsoft.com/blog/azurecompute/announcing-the-general-availability-of-the-next-generation-of-azure-boost/4519136
+deliveries:
+  site: true
+  llms: true
+  skills: true
 ---
 
 ## 概要
