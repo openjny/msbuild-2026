@@ -11,6 +11,8 @@ Azure Cobalt 200 Arm ベース仮想マシン（VM）が Build 2026 で Early Ac
 - **Azure Cobalt 200 Arm ベース VM**: 前世代比 50% パフォーマンス向上の Linux VM（**Early Access Preview**）
 - **エージェンティック AI 最適化**: AI ワークロードの推論・オーケストレーションに特化した設計
 - **カスタム Arm チップ**: Microsoft 独自設計の Cobalt 200 プロセッサによる電力効率とスループットの改善
+- **Azure Boost 次世代 GA**: ネットワーク・ストレージ処理をホスト CPU から専用ハードウェアにオフロードし、VM パフォーマンスを向上させるインフラ基盤（**GA**）
+- **Confidential Live Migration**: Intel TDX ベースの Confidential VM をダウンタイムなしでライブマイグレーション。ホスト保守時のワークロード中断を排除（**Preview**）
 
 ## 詳細
 

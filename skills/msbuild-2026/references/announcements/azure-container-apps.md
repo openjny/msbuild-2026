@@ -26,6 +26,16 @@ Container Apps Dynamic Sessions は、AI エージェントが生成したコー
 
 Azure Container Apps は、Azure Functions（イベント駆動エージェント）と App Service（Web アプリ）の中間に位置し、コンテナベースのエージェントワークロードのホスティングに適する。マイクロサービスアーキテクチャのエージェントデプロイ、Dapr 連携によるサービス間通信、KEDA によるイベント駆動スケーリングを組み合わせて利用できる。
 
+### Agent Governance Toolkit（AGT）連携
+
+[Agent Governance Toolkit](https://github.com/microsoft/agent-governance-toolkit) の `agt-sandbox` パッケージが ACA Sandboxes をバックエンドとしてネイティブサポート。ACASandboxProvider により、エージェント生成コードの実行に対して多層ガバナンスを適用する:
+
+- **ホストサイドポリシー評価**: YAML PolicyDocument の deny ルール・ツール許可リスト・AST スキャンをコード実行前に適用。拒否されたコードは Azure へのラウンドトリップなしで即座にブロック
+- **Azure 側エグレスポリシー**: `network_allowlist` に基づく fail-closed のエグレスプロキシ。許可リスト外のホストへの通信は HTTP 403 で遮断
+- **リソース制限**: PolicyDocument の `max_cpu` / `max_memory_mb` / `timeout_seconds` を ACA サンドボックスの CPU・メモリ上限・実行タイムアウトに投影
+
+3 つのプロバイダー（Docker / Hyperlight / ACA）で同一の SandboxProvider インターフェースを共有し、ローカル開発から本番 Azure 環境まで同じエージェントコードで動作する。
+
 ## 応用シナリオ
 
 - AI エージェントが生成したコードをサンドボックス内で安全に実行・検証し、本番環境への影響を排除
