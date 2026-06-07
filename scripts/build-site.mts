@@ -217,7 +217,7 @@ function buildIndexPage(entries: ContentEntry[], topics: TopicDef[]): string {
   }
 
   lines.push('');
-  lines.push('## 最新アナウンス');
+  lines.push('## 📢 最新アナウンス');
   lines.push('');
 
   for (const e of announcements.slice(0, 10)) {
@@ -225,8 +225,13 @@ function buildIndexPage(entries: ContentEntry[], topics: TopicDef[]): string {
     lines.push(`- [${e.frontmatter.title}](${link})`);
   }
 
+  if (announcements.length > 10) {
+    lines.push('');
+    lines.push(`[…全${announcements.length}件を見る](/announcements/)`);
+  }
+
   lines.push('');
-  lines.push('## セッション');
+  lines.push('## 🎤 セッション');
   lines.push('');
 
   for (const e of sessions.slice(0, 10)) {
