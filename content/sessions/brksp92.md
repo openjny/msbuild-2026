@@ -12,6 +12,9 @@ topic: developer-tools-and-frameworks
 official_sources:
   - https://build.microsoft.com/sessions/BRKSP92
 deliveries:
+  site: true
+  llms: true
+  skills: true
   demo: true
   slides: true
   video: true
