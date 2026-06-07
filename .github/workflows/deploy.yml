@@ -25,6 +25,8 @@ jobs:
 
             - run: npm ci
 
+            - run: npm run validate
+
             - run: npm run build
 
             - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5

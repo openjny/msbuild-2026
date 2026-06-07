@@ -25,6 +25,8 @@ jobs:
 
             - run: npm ci
 
+            - run: npm run validate
+
             - run: npm run build:content
 
             - name: Check for changes
