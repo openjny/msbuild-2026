@@ -43,6 +43,10 @@ npx skills add openjny/msbuild-2026 --skill msbuild-2026
 キーノートを中心に Build 2026 のトレンドや注目ポイントを教えてください。
 ```
 
+## 参考情報
+
+- [AI で楽してキャッチアップしたい人向けの Microsoft Build 2026 まとめ](https://zenn.dev/openjny/articles/64dfd5707240b7): このリポジトリの紹介・解説記事です
+
 ## ライセンス
 
 - コード: [MIT](LICENSE-MIT)
