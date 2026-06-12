@@ -127,6 +127,7 @@ Replit をローンチパートナーとし、ブラウザベースの AI コー
 
 - [Fabric Updates Blog: Introducing Rayfin](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Introducing-Rayfin-A-new-AI-first-way-to-build-deploy-and-govern/ba-p/5191676)
 - [Azure Blog: Building agentic apps with Microsoft Fabric](https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases)
+- [3 things leaders need to know from Microsoft Build 2026（Azure Blog）](https://azure.microsoft.com/en-us/blog/3-things-leaders-need-to-know-from-microsoft-build-2026/)
 - [GitHub リポジトリ: microsoft/rayfin](https://github.com/microsoft/rayfin)
 - [Build セッション: Data, apps, and agents: the future of app dev with Rayfin (BRK225)](https://build.microsoft.com/sessions/BRK225)
 - [Rayfin 公式ページ](https://aka.ms/rayfin)
@@ -135,9 +136,3 @@ Replit をローンチパートナーとし、ブラウザベースの AI コー
 
 - [Microsoft Fabric](../announcements/microsoft-fabric.md) — Rayfin のデプロイ先プラットフォーム
 - [GitHub Copilot SDK](../announcements/github-copilot-sdk.md) — エージェントがバックエンドを生成するユースケース
-
-## 参考リンク
-
-- [Microsoft Build 2026: Building agentic apps with Microsoft Fabric and Microsoft Databases](https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases)
-- [Introducing Rayfin（Fabric Community）](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Introducing-Rayfin-A-new-AI-first-way-to-build-deploy-and-govern/ba-p/5191676)
-- [GitHub App + Rayfin: Microsoft Build 2026（デモ動画）](https://news.microsoft.com/build-2026)

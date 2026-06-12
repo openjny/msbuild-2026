@@ -93,6 +93,8 @@ Frontier Tuning は 3 つのチャネルから利用可能になる:
 
 - [Frontier Tuning: Teaching AI to work the way you do（公式ブログ）](https://devblogs.microsoft.com/microsoft365dev/frontier-tuning-teaching-ai-to-work-the-way-you-do)
 - [AI alone won't change your business. The system running it will.（Jay Parikh ブログ）](https://blogs.microsoft.com/blog/2026/06/02/ai-alone-wont-change-your-business-the-system-running-it-will)
+- [What's new in Microsoft Foundry | Build Edition](https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-build-2026)
+- [3 things leaders need to know from Microsoft Build 2026（Azure Blog）](https://azure.microsoft.com/en-us/blog/3-things-leaders-need-to-know-from-microsoft-build-2026/)
 - [Frontier Tuning 詳細情報](https://aka.ms/frontiertuning)
 - [Microsoft Copilot Studio](https://www.microsoft.com/en-us/microsoft-365-copilot/microsoft-copilot-studio/)
 - [Microsoft Foundry](https://azure.microsoft.com/en-us/products/ai-foundry/)
@@ -103,9 +105,3 @@ Frontier Tuning は 3 つのチャネルから利用可能になる:
 - [Microsoft Foundry](microsoft-foundry.md) — RLE のホスティング基盤
 - [Foundry IQ](foundry-iq.md) — RLE へのナレッジ入力に使用されるナレッジプレーン
 - [Microsoft Copilot Studio](copilot-studio.md) — メーカー向け Frontier Tuning 統合先
-
-## 参考リンク
-
-- [Frontier Tuning: Teaching AI to work the way you do](https://devblogs.microsoft.com/microsoft365dev/frontier-tuning-teaching-ai-to-work-the-way-you-do)
-- [What's new in Microsoft Foundry | Build Edition](https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-build-2026)
-- [Microsoft Build 2026: Be yourself at work](https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work)

@@ -63,4 +63,5 @@ Fabric 内のデータベース資産（Azure SQL、Cosmos DB、Mirrored DB な�
 
 - [Microsoft Build 2026: Building agentic apps with Microsoft Fabric and Microsoft Databases](https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases)
 - [GPU Accelerated Fabric Data Warehouse](https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/bg-p/FabricUpdateBlog)
+- [3 things leaders need to know from Microsoft Build 2026（Azure Blog）](https://azure.microsoft.com/en-us/blog/3-things-leaders-need-to-know-from-microsoft-build-2026/)
 - [Microsoft Fabric ドキュメント](https://learn.microsoft.com/fabric/)

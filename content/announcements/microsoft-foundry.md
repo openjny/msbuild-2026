@@ -210,19 +210,15 @@ Voice Live は Foundry エージェントにリアルタイム音声対話を追
 - [Microsoft Agent Framework GitHub リポジトリ](https://github.com/microsoft/agent-framework)
 - [BRK241: From prototype to production — build and run agents at scale](https://build.microsoft.com/sessions/BRK241)
 - [Build 2026 recap（developer.microsoft.com）](https://developer.microsoft.com/blog/build-recap)
+- [3 things leaders need to know from Microsoft Build 2026（Azure Blog）](https://azure.microsoft.com/en-us/blog/3-things-leaders-need-to-know-from-microsoft-build-2026/)
 
 ## 関連エントリ
 
 - [Foundry IQ](../announcements/foundry-iq.md) — サーバーレス検索とナレッジ統合の詳細
 - [GitHub Copilot SDK](../announcements/github-copilot-sdk.md) — Agent Framework との SDK 統合
 - [Foundry Local](../announcements/foundry-local.md) — ローカル推論エンジン
+- [Azure Content Understanding](../announcements/azure-content-understanding.md) — Foundry のドキュメント理解基盤
+- [Azure Speech](../announcements/azure-speech.md) — Voice Live が利用する音声基盤
+- [Agent 365](../announcements/agent-365.md) — エージェントの運用・ガバナンス基盤
 - [BRK241: From prototype to production](../sessions/brk241.md) — エージェントのエンドツーエンド開発ライフサイクルのライブデモ
 - [Microsoft Foundry ドキュメント](https://learn.microsoft.com/azure/ai-foundry/)
-
-## 関連エントリ
-
-- [Foundry IQ](foundry-iq.md)
-- [Foundry Local](foundry-local.md)
-- [Azure Content Understanding](azure-content-understanding.md)
-- [Azure Speech](azure-speech.md)
-- [Agent 365](agent-365.md)
